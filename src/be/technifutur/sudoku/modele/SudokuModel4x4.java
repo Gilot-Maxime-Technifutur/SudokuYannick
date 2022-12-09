@@ -1,17 +1,15 @@
-package be.technifutur.sudoku.sudo4x4;
-
-import be.technifutur.sudoku.*;
+package be.technifutur.sudoku.modele;
 
 public class SudokuModel4x4 extends AbstractSudokuModel implements SudokuModel {
 
     public SudokuModel4x4() {
-        super(createGrille(4));
+        super(createGrille());
     }
 
-    private Cell[][] createGrille(int size){
-        Cell[][] grille = new Cell[size][size];
-        for (int i=0;i<size;i++){
-            for (int j=0;j<size;j++){
+    private static Cell[][] createGrille(){
+        Cell[][] grille = new Cell[4][4];
+        for (int i=0;i<4;i++){
+            for (int j=0;j<4;j++){
                 grille[i][j] = new Cell();
             }
         }

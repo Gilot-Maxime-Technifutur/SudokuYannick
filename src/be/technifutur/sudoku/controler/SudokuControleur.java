@@ -1,6 +1,4 @@
-package be.technifutur.sudoku;
-
-import be.technifutur.sudoku.sudo9x9.SudokuModel9x9;
+package be.technifutur.sudoku.controler;
 
 public interface SudokuControleur {
     void sart();

@@ -1,9 +1,7 @@
-package be.technifutur.sudoku.sudoSamourail;
+package be.technifutur.sudoku.modele;
 
-import be.technifutur.sudoku.AbstractSudokuModel;
-import be.technifutur.sudoku.SudokuModel;
-import be.technifutur.sudoku.SudokuPositionException;
-import be.technifutur.sudoku.SudokuValueException;
+import be.technifutur.sudoku.modele.AbstractSudokuModel;
+import be.technifutur.sudoku.modele.SudokuModel;
 
 public class SudokuModelSamourail extends AbstractSudokuModel implements SudokuModel {
 

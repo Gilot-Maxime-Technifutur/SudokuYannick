@@ -1,4 +1,6 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.exception;
+
+import be.technifutur.sudoku.exception.SudokuException;
 
 public class SudokuPositionException extends SudokuException {
     public SudokuPositionException() {

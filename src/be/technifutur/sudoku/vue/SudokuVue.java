@@ -1,4 +1,4 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.vue;
 
 public interface SudokuVue {
     void afficherGrille();

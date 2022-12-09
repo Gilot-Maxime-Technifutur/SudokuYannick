@@ -1,6 +1,9 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.modele;
 
-public abstract class AbstractSudokuModel implements SudokuModel{
+import be.technifutur.sudoku.exception.SudokuPositionException;
+import be.technifutur.sudoku.exception.SudokuValueException;
+
+public abstract class AbstractSudokuModel implements SudokuModel {
 
     private Cell[][] grille;
     public AbstractSudokuModel(Cell[][] grille){

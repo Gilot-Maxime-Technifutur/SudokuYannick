@@ -1,10 +1,8 @@
-package be.technifutur.sudoku.sudo4x4;
+package be.technifutur.sudoku.vue;
 
-import be.technifutur.sudoku.AbstractVue;
-import be.technifutur.sudoku.SudokuModel;
-import be.technifutur.sudoku.SudokuPositionException;
-import be.technifutur.sudoku.SudokuVue;
-import be.technifutur.sudoku.sudo9x9.SudokuModel9x9;
+import be.technifutur.sudoku.modele.SudokuModel4x4;
+import be.technifutur.sudoku.vue.AbstractVue;
+import be.technifutur.sudoku.vue.SudokuVue;
 
 public class Vue4x4 extends AbstractVue implements SudokuVue {
     private static String format = """

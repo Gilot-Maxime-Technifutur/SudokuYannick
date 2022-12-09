@@ -1,8 +1,15 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.controler;
+
+import be.technifutur.sudoku.input.Input;
+import be.technifutur.sudoku.input.ScannerInput;
+import be.technifutur.sudoku.exception.SudokuException;
+import be.technifutur.sudoku.exception.SudokuPositionException;
+import be.technifutur.sudoku.exception.SudokuValueException;
+import be.technifutur.sudoku.modele.SudokuModel;
+import be.technifutur.sudoku.vue.SudokuVue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.modele;
 
 import java.util.HashMap;
 import java.util.HashSet;

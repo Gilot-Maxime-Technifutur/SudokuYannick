@@ -1,10 +1,10 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.vue;
 
-import be.technifutur.sudoku.sudoSamourail.SudokuModelSamourail;
+import be.technifutur.sudoku.exception.SudokuPositionException;
+import be.technifutur.sudoku.modele.SudokuModel;
+import be.technifutur.sudoku.vue.SudokuVue;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public abstract class AbstractVue implements SudokuVue {

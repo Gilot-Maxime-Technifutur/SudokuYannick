@@ -1,11 +1,14 @@
 package be.technifutur.sudoku;
 
-import be.technifutur.sudoku.sudo4x4.SudokuModel4x4;
-import be.technifutur.sudoku.sudo4x4.Vue4x4;
-import be.technifutur.sudoku.sudo9x9.SudokuModel9x9;
-import be.technifutur.sudoku.sudo9x9.Vue9x9;
-import be.technifutur.sudoku.sudoSamourail.SudokuModelSamourail;
-import be.technifutur.sudoku.sudoSamourail.VueSamourail;
+import be.technifutur.sudoku.controler.CreateSudokuControleur;
+import be.technifutur.sudoku.controler.SudokuControleur;
+import be.technifutur.sudoku.input.ScannerInput;
+import be.technifutur.sudoku.modele.SudokuModel4x4;
+import be.technifutur.sudoku.vue.Vue4x4;
+import be.technifutur.sudoku.modele.SudokuModel9x9;
+import be.technifutur.sudoku.vue.Vue9x9;
+import be.technifutur.sudoku.modele.SudokuModelSamourail;
+import be.technifutur.sudoku.vue.VueSamourail;
 
 public class Main {
     private static ScannerInput input = new ScannerInput();

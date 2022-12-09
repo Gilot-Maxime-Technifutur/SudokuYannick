@@ -1,9 +1,7 @@
-package be.technifutur.sudoku.sudoSamourail;
+package be.technifutur.sudoku.vue;
 
-import be.technifutur.sudoku.AbstractVue;
-import be.technifutur.sudoku.SudokuModel;
-import be.technifutur.sudoku.SudokuPositionException;
-import be.technifutur.sudoku.SudokuVue;
+import be.technifutur.sudoku.modele.SudokuModelSamourail;
+import be.technifutur.sudoku.vue.AbstractVue;
 
 public class VueSamourail extends AbstractVue {
     private static String format = """

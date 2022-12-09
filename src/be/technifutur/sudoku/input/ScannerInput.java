@@ -1,4 +1,6 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.input;
+
+import be.technifutur.sudoku.input.Input;
 
 import java.util.Scanner;
 

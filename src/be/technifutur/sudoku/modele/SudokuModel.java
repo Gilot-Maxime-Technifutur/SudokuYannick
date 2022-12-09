@@ -1,4 +1,7 @@
-package be.technifutur.sudoku;
+package be.technifutur.sudoku.modele;
+
+import be.technifutur.sudoku.exception.SudokuPositionException;
+import be.technifutur.sudoku.exception.SudokuValueException;
 
 public interface SudokuModel {
     char EMPTY = 0;
