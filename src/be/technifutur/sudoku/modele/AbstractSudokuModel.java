@@ -1,5 +1,6 @@
 package be.technifutur.sudoku.modele;
 
+import be.technifutur.sudoku.exception.SudokuDoublonException;
 import be.technifutur.sudoku.exception.SudokuPositionException;
 import be.technifutur.sudoku.exception.SudokuValueException;
 
@@ -30,7 +31,7 @@ public abstract class AbstractSudokuModel implements SudokuModel {
     public abstract boolean isPositionValid(int lig, int col);
 
     @Override
-    public void setValue(int lig, int col, char value) throws SudokuPositionException, SudokuValueException {
+    public void setValue(int lig, int col, char value) throws SudokuPositionException, SudokuValueException, SudokuDoublonException {
         testPosition(lig, col);
         testValue(value);
             this.grille[lig][col].setValue(value);

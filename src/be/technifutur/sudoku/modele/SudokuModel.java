@@ -1,5 +1,6 @@
 package be.technifutur.sudoku.modele;
 
+import be.technifutur.sudoku.exception.SudokuDoublonException;
 import be.technifutur.sudoku.exception.SudokuPositionException;
 import be.technifutur.sudoku.exception.SudokuValueException;
 
@@ -9,7 +10,7 @@ public interface SudokuModel {
     char getValue(int lig, int col)throws SudokuPositionException;
 
     void setValue(int lig, int col, char value)
-            throws SudokuPositionException, SudokuValueException;
+            throws SudokuPositionException, SudokuValueException, SudokuDoublonException;
 
     void deleteValue(int lig, int col)throws SudokuPositionException;
 

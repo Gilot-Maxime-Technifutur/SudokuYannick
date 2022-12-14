@@ -1,5 +1,6 @@
 package be.technifutur.sudoku.controler;
 
+import be.technifutur.sudoku.exception.SudokuDoublonException;
 import be.technifutur.sudoku.input.Input;
 import be.technifutur.sudoku.input.ScannerInput;
 import be.technifutur.sudoku.exception.SudokuException;
@@ -80,10 +81,8 @@ public class CreateSudokuControleur implements SudokuControleur {
                                 j++;
                             }
                         }
-                    } catch (SudokuPositionException e) {
-                        throw new RuntimeException(e);
-                    } catch (SudokuValueException e) {
-                        throw new RuntimeException(e);
+                    } catch (SudokuException e) {
+                        vue.setMessage(e.getMessage());
                     }
                 }
                 i++;
