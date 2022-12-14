@@ -18,17 +18,17 @@ public class Main {
                 switch (input.read("1 Sudoku 4 x 4\n2 Sudoku 9 x 9\n3 Sudoku Samourail\n")) {
                     case "1" -> {
                         SudokuControleur ctrl = getCreateSudokuControleur(new SudokuModel4x4());
-                        ctrl.init("be.technifutur.sudoku.sudo4x4.txt");
+                        ctrl.init("sudo4x4.txt");
                         yield ctrl;
                     }
                     case "2" -> {
                         SudokuControleur ctrl = getCreateSudokuControleur(new SudokuModel9x9());
-                        ctrl.init("be.technifutur.sudoku.sudo9x9.txt");
+                        ctrl.init("sudo9x9.txt");
                         yield ctrl;
                     }
                     case "3" -> {
                         SudokuControleur ctrl = getCreateSudokuControleur(new SudokuModelSamourail());
-                        ctrl.init("sudokuSamourai.txt");
+                        ctrl.init("sudo21x21.txt");
                         yield ctrl;
                     }
                     default -> null;

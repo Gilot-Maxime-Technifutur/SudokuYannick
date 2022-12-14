@@ -6,7 +6,18 @@ import be.technifutur.sudoku.modele.SudokuModel;
 public class SudokuModelSamourail extends AbstractSudokuModel implements SudokuModel {
 
     public SudokuModelSamourail() {
-        super(21);
+        super(createGrille());
+    }
+
+    private static Cell[][] createGrille(){
+        Cell[][] grille = new Cell[21][21];
+        for (int i=0;i<21;i++){
+            for (int j=0;j<21;j++){
+                grille[i][j] = new Cell();
+            }
+        }
+
+        return grille;
     }
 
     @Override
