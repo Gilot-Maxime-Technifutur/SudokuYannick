@@ -3,6 +3,7 @@ package be.technifutur.sudoku.modele;
 import be.technifutur.sudoku.modele.AbstractSudokuModel;
 import be.technifutur.sudoku.modele.SudokuModel;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class SudokuModelSamourail extends AbstractSudokuModel implements SudokuModel {
@@ -11,26 +12,46 @@ public class SudokuModelSamourail extends AbstractSudokuModel implements SudokuM
         super(createGrille());
     }
 
-    private static Cell[][] createGrille(){
+    private static Cell[][] createGrille() {
         Cell[][] grille = new Cell[21][21];
-        Set<Character>[] lignes = new Set[45];
-        Set<Character>[] colonnes = new Set[45];
-        Set<Character>[] carres = new Set[41];
+        Set<Character>[] lignes = initSet(9 * 5);
+        Set<Character>[] colonnes = initSet(9 * 5);
+        Set<Character>[] carres = initSet(9 * 5);
+        int[][] sTab = {{0, 0}, {0, 12}, {6, 6}, {12, 0}, {12, 12}};
+        int[][] eTab = {{}};
 
-        for (int i=0;i<21;i++){
-            for (int j=0;j<21;j++){
-                if(isPValid(i, j)) {
-                    int sudo = 0;
-                    int carre = (i/3)*3+j/3;
-                    grille[i][j] = new Cell();
-                    grille[i][j].addZone("ligne", lignes[i * sudo]);
-                    grille[i][j].addZone("colonne", colonnes[j * sudo]);
-                    grille[i][j].addZone("carre", carres[(0) * sudo]);
+        for (int k = 0; k < 5; k++){
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (isPValid(i, j)) {
+                        int lig = i + sTab[k][0];
+                        int col = j + sTab[k][1];
+
+                        if(grille[lig][col] == null){
+                            grille[lig][col] = new Cell();
+                            grille[lig][col].addZone("ligne", lignes[i + k * 9]);
+                            grille[lig][col].addZone("colonne", colonnes[j + k * 9]);
+                            grille[lig][col].addZone("carre", carres[((i / 3 ) * 3 + j / 3) + k * 9]);
+                        }else{
+                            grille[lig][col].addZone("ligneBis", lignes[i + k * 9]);
+                            grille[lig][col].addZone("colonneBis", colonnes[j + k * 9]);
+                        }
+                    }
                 }
             }
         }
 
         return grille;
+    }
+
+    private static Set<Character>[] initSet(int taille){
+        Set<Character>[] tab = new Set[taille];
+
+        for(int i = 0; i < taille; i++){
+            tab[i] = new HashSet<>();
+        }
+
+        return tab;
     }
 
     @Override

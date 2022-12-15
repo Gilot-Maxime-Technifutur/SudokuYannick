@@ -76,6 +76,7 @@ public class CreateSudokuControleur implements SudokuControleur {
                     try {
                         if (c != '0') {
                             if (sudoku.isPositionValid(i,j)){
+                                System.out.println(i + " " + j + " " + c);
                                 sudoku.setValue(i, j, c);
                             }else{
                                 j++;

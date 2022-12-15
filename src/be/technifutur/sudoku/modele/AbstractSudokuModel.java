@@ -4,6 +4,9 @@ import be.technifutur.sudoku.exception.SudokuDoublonException;
 import be.technifutur.sudoku.exception.SudokuPositionException;
 import be.technifutur.sudoku.exception.SudokuValueException;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public abstract class AbstractSudokuModel implements SudokuModel {
 
     private Cell[][] grille;
@@ -34,7 +37,7 @@ public abstract class AbstractSudokuModel implements SudokuModel {
     public void setValue(int lig, int col, char value) throws SudokuPositionException, SudokuValueException, SudokuDoublonException {
         testPosition(lig, col);
         testValue(value);
-            this.grille[lig][col].setValue(value);
+        this.grille[lig][col].setValue(value);
     }
 
     private void testValue(char value) throws SudokuValueException {

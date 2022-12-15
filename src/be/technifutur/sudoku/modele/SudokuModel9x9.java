@@ -14,9 +14,9 @@ public class SudokuModel9x9 extends AbstractSudokuModel implements SudokuModel {
 
     private static Cell[][] createGrille(){
         Cell[][] grille = new Cell[9][9];
-        Set<Character>[] lignes = new Set[9];
-        Set<Character>[] colonnes = new Set[9];
-        Set<Character>[] carres = new Set[9];
+        Set<Character>[] lignes = initSet(9);
+        Set<Character>[] colonnes = initSet(9);
+        Set<Character>[] carres = initSet(9);
 
         for (int i=0;i<9;i++){
             for (int j=0;j<9;j++){
@@ -28,6 +28,16 @@ public class SudokuModel9x9 extends AbstractSudokuModel implements SudokuModel {
         }
 
         return grille;
+    }
+
+    private static Set<Character>[] initSet(int taille){
+        Set<Character>[] tab = new Set[taille];
+
+        for(int i = 0; i < taille; i++){
+            tab[i] = new HashSet<>();
+        }
+
+        return tab;
     }
 
     @Override
