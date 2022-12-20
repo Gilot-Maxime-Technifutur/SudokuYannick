@@ -11,13 +11,17 @@ import be.technifutur.sudoku.vue.SudokuVue;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CreateSudokuControleur implements SudokuControleur {
     private final SudokuModel sudoku;
     private final SudokuVue vue;
+    private Stack<BigInteger> historique = new Stack<>();
 
     private final Input input;
 
@@ -76,7 +80,6 @@ public class CreateSudokuControleur implements SudokuControleur {
                     try {
                         if (c != '0') {
                             if (sudoku.isPositionValid(i,j)){
-                                System.out.println(i + " " + j + " " + c);
                                 sudoku.setValue(i, j, c);
                             }else{
                                 j++;
@@ -92,5 +95,17 @@ public class CreateSudokuControleur implements SudokuControleur {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public void save(Object o){
+        Optional<BigInteger> memento = (Optional<BigInteger>) o;
+        if(memento.isPresent()) {
+            historique.push(memento);
+        }
+    }
+
+    public void load(){
+        BigInteger memento = historique.firstElement();
+        sudoku.setMemento(memento);
     }
 }

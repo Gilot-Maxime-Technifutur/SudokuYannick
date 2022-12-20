@@ -64,8 +64,8 @@ public class Cell {
     }
 
     public void lock() {
-        if (!isEmpty()){
-            this.lock = true;
+        if(!isEmpty()){
+            lock = true;
         }
     }
 
@@ -102,5 +102,10 @@ public class Cell {
                 if(entry.getValue().contains(value))
                     throw new SudokuDoublonException(String.format("la valeur %s est un doublon sur %s", value, entry.getKey()));
         }
+    }
+
+    @Override
+    public String toString(){
+        return String.format("%s isLock %s", value, lock);
     }
 }
